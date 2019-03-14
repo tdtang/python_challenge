@@ -32,7 +32,7 @@ for row in Profit_Losses:
        # value_1: is the value at the index before value_1
        value_1 = Profit_Losses[(counter - 1)]
        # value_2: is the value given on any iteration
-       value_2 = Profit_Losses[counter]
+       value_2 = Profit_Losses[counter]`    zzzzz
        # Calculate Monthly_Change = month2 - month1 or value_2 - value_1
        Monthly_Change = value_2 - value_1
        # Append to Profit_Changes list
@@ -71,11 +71,11 @@ Month_2 = Months[index_2]
 #write to terminal
 print("Financial Analysis")
 print("-------------------------")
-print("Total Months: $", row_count)
-print("Total Revenue: $", total)
-print("Average Revenue Change: $", round(total_revenue_change/ (row_count - 1),0))
-print("Greatest Increase in Revenue: ", gretest_revenue_incmonth, "($", gretest_revenue_inc, ")")
-print("Greatest Decrease in Revenue: ", gretest_revenue_decmonth, "($", gretest_revenue_dec, ")")
+print("Total Months: $", len(Months))
+print("Total Revenue: $", Net)
+print("Average Revenue Change: $", Average_Change)
+print("Greatest Increase in Revenue: ", Months[index_1], "($", Profit_Losses[index_1], ")")
+print("Greatest Decrease in Revenue: ", Months[index_2], "($", Profit_Losses[index_2], ")")
 
 
 #write to file
@@ -83,8 +83,8 @@ with open('results.txt', 'w') as results:
     #printing all the values to the given format
     print("Financial Analysis", file = results)
     print("-------------------------", file = results)
-    print("Total Months: $", row_count, file = results)
-    print("Total Revenue: $", total, file = results)
-    print("Average Revenue Change: $", round(total_revenue_change/ (row_count - 1),0), file = results)
-    print("Greatest Increase in Revenue: ", gretest_revenue_incmonth, "($", gretest_revenue_inc, ")", file = results)
-    print("Greatest Decrease in Revenue: ", gretest_revenue_decmonth, "($", gretest_revenue_dec, ")", file = results)
+    print("Total Months: $", len(Months), file = results)
+    print("Total Revenue: $", Net, file = results)
+    print("Average Revenue Change: $", Average_Change, file = results)
+    print("Greatest Increase in Revenue: ", Months[index_1], "($", Profit_Losses[index_1], ")", file = results)
+    print("Greatest Decrease in Revenue: ", Months[index_2], "($", Profit_Losses[index_2], ")", file = results)
